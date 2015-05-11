@@ -1,4 +1,4 @@
-# Puppet Module for repos.jethrocarr.com
+# puppet-repo_jethro
 
 This Puppet module configures the repositories available at
 repos.jethrocarr.com for supported platforms.
