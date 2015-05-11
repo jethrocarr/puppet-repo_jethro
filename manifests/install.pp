@@ -37,6 +37,12 @@ class repo_jethro::install {
         mode   => '0644',
       }
 
+      repo_jethro::rpm_gpg_key { "RPM-GPG-KEY-repos.jethrocarr.com":
+        path    => '/etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
+        require => File['RPM-GPG-KEY-repos.jethrocarr.com'],
+        before  => Yumrepo['jethrocarr-os', 'jethrocarr-updates', 'jethrocarr-custom'],
+      }
+
     } else {
       notify { "repo_jethro not supported for this version of your platform.":
         loglevel => debug,
