@@ -1,0 +1,14 @@
+{
+  "name": "jethrocarr-repo_jethro",
+  "version": "1.0.0",
+  "author": "jethrocarr",
+  "summary": "Adds the repositories for repos.jethrocarr.com",
+  "license": "Apache 2.0",
+  "source": "https://github.com/jethrocarr/puppet-repo_jethro",
+  "project_page": "https://github.com/jethrocarr/puppet-repo_jethro",
+  "issues_url": "https://github.com/jethrocarr/puppet-repo_jethro/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
