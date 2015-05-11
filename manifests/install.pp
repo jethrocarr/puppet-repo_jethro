@@ -11,21 +11,21 @@ class repo_jethro::install {
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-os/\$basearch/",
         enabled  => $repo_jethro::enabled_os,
         gpgcheck => true,
-        gpgkey   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
+        gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
       }
 
       yumrepo { 'jethrocarr-updates':
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-updates/\$basearch/",
         enabled  => $repo_jethro::enabled_updates,
         gpgcheck => true,
-        gpgkey   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
+        gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
       }
 
       yumrepo { 'jethrocarr-custom':
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-custom/\$basearch/",
         enabled  => $repo_jethro::enabled_custom,
         gpgcheck => true,
-        gpgkey   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
+        gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-repos.jethrocarr.com',
       }
 
       file { 'RPM-GPG-KEY-repos.jethrocarr.com':
