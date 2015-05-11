@@ -8,6 +8,7 @@ class repo_jethro::install {
     if ( member($repo_jethro::releases['centos'], $::operatingsystemmajrelease) ) {
 
       yumrepo { 'jethrocarr-os':
+        desc     => 'jethrocarr-os',
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-os/\$basearch/",
         enabled  => $repo_jethro::enabled_os,
         gpgcheck => true,
@@ -15,6 +16,7 @@ class repo_jethro::install {
       }
 
       yumrepo { 'jethrocarr-updates':
+        desc     => 'jethrocarr-updates',
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-updates/\$basearch/",
         enabled  => $repo_jethro::enabled_updates,
         gpgcheck => true,
@@ -22,6 +24,7 @@ class repo_jethro::install {
       }
 
       yumrepo { 'jethrocarr-custom':
+        desc     => 'jethrocarr-custom',
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-custom/\$basearch/",
         enabled  => $repo_jethro::enabled_custom,
         gpgcheck => true,
