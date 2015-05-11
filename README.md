@@ -19,6 +19,10 @@ installed before any packages, use:
 
     require repo_jethro
 
+If you wish to change any of the options, eg disable a particular repo or even
+override where the packages are pulled from (eg local mirror) the best place
+is to override inside Hiera.
+
 
 # Security
 
