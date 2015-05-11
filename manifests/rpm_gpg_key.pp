@@ -2,7 +2,7 @@
 # stahnma/puppet-module-epel module, see:
 # https://github.com/stahnma/puppet-module-epel/blob/master/manifests/rpm_gpg_key.pp
 
-define jethro_repo::rpm_gpg_key($path) {
+define repo_jethro::rpm_gpg_key($path) {
   # Given the path to a key, see if it is imported, if not, import it
   exec {  "import-${name}":
     path      => '/bin:/usr/bin:/sbin:/usr/sbin',
