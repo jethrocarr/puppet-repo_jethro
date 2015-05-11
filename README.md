@@ -1,43 +1,35 @@
-# Puppet Module for Pupistry
+# Puppet Module for repos.jethrocarr.com
 
-This is a companion module for Pupistry deployments. If you are using Pupistry,
-it is recommended you add this module to all your nodes to make Puppet work
-smoothly in masterful mode.
-
-Please see https://github.com/jethrocarr/pupistry for more details.
+This Puppet module configures the repositories available at
+repos.jethrocarr.com for supported platforms.
 
 
-# What it does
+# Usage
 
-Whilst Pupistry does most of the heavy lifting we need, this module helps
-out by adding functionality lost when in masterlesss mode (like pluginsync)
-and sets up Pupistry daemon for background application of new Puppet config.
+If you are using r10k, make sure the module is in your Puppetfile
 
-It isn't mandatory, you can use Pupistry without it if you take steps to add
-the bits you need/want to your own manifests.
+    mod 'jethrocarr/repo_jethro'
+
+In your Puppet manifests (eg site.pp):
+
+    include repo_jethro
+
+If you want to include from a specific module (eg SOE) and ensure the repo is
+installed before any packages, use:
+
+    require repo_jethro
 
 
-# Configuration
+# Security
 
-This module sets Pupistry up with various sensible defaults including
-installation of the daemon and ensuring latest version installed via Rubygems.
-
-If you wish to change any behaviors, just review the configuration in
-`manifests/params.pp` and create an override entry in Hiera - no need to have
-to fork the module.
-
-Example of override in Hiera to disable daemon:
-
-    pupistry::install_daemon: false
-
-Overrides that should impact all systems can go into common.yaml, otherwise
-just selectively put the override into the most appropiate YAML file for your
-layout.
+Whilst packages are downloaded via HTTP, all packages using the Jethro Carr
+repos are GPG signed. The GPG signing public key is included in this Puppet
+module, rather than being downloaded via unencrypted methods.
 
 
 # License
 
-Pupistry is licensed under the Apache License, Version 2.0 (the "License").
+This module is licensed under the Apache License, Version 2.0 (the "License").
 See the LICENSE.txt or http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
