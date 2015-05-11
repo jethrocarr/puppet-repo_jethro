@@ -19,7 +19,7 @@ class repo_jethro::params {
   $enable_custom  = true
 
   # Supported Releases
-  $repo = { 'centos' => ['7'] }
+  $releases = { 'centos' => ['7'] }
 }
 
 

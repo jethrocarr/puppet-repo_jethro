@@ -5,7 +5,7 @@ class repo_jethro (
   $enable_custom     = $repo_jethro::params::enable_custom,
   $url_domain        = $repo_jethro::params::url_domain,
   $url_path          = $repo_jethro::params::url_path,
-  $repo              = $repo_jethro::params::repo
+  $releases          = $repo_jethro::params::releases
   ) inherits repo_jethro::params {
 
   include repo_jethro::install
