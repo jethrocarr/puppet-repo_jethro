@@ -19,12 +19,7 @@ class repo_jethro::params {
   $enable_custom  = true
 
   # Supported Releases
-  $repo['centos'] = ['7']
-
-  # Not supporting older "amberdms" repo naming scheme releases yet, will
-  # probably just start supporting newer releases
-  #$repo['debian'] = ['wheezy', 'squeeze']
-  #$repo['ubuntu'] = ['precise', 'lucid']
+  $repo = { 'centos' => ['7'] }
 }
 
 

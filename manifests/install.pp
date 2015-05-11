@@ -5,7 +5,7 @@ class repo_jethro::install {
   if ( $::osfamily == 'RedHat' ) {
     # CentOS, RHEL, Scientific Linux, Amazon Linux and others.
 
-    if ( member($repo_jethro::repos, $::operatingsystemmajrelease) ) {
+    if ( member($repo_jethro::repos['centos'], $::operatingsystemmajrelease) ) {
 
       yumrepo { 'jethrocarr-os':
         baseurl  => "http://${repo_jethro::url_domain}${repo_jethro::url_path}/centos/${::operatingsystemmajrelease}/jethrocarr-os/\$basearch/",
